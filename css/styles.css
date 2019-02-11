@@ -1,0 +1,42 @@
+* { box-sizing: border-box; 
+	margin: 0 auto;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: lightyellow;
+	color: grey;
+}
+
+div.photo-album-container {
+	text-align: center;
+}
+
+div.photo-album-container h1 {
+	padding: 20px;
+	font-size: 48px;
+}
+
+img.thumbnail {
+	width: 150px;
+	height: 150px;
+	border-radius: 5px;
+  	cursor: pointer;
+  	transition: 0.3s;
+}
+
+img.thumbnail:hover {
+	opacity: 0.75;
+}
+
+div.thumbnails {
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+	border: solid lightgrey 1px;
+}
+
+
+
+
+

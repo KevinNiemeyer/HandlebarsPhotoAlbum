@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Templating</title>
-  <link rel="stylesheet" type="text/css" href="users.css">
-  <script id="users-template" type="text/x-handlebars-template">
-    <h1>Companies</h1>
-    {{#companyList users company="company.name"}}
-      <a href="{{@website}}">{{@company}}</a>
-    {{/companyList}}
-    <h1>Users</h1>
-    {{#each users}}
-    <div class="user">
-      {{> userHeader total=../users.length}}
-      {{> address address}}
-    </div>
-    {{/each}}
-  </script>
-  <script id="address-template" type="text/x-handlebars-template">
-    {{#if this}}
-    <div class="address">
-      <p class="street">{{suite}} {{street}}</p>
-      <p class="city-zip">{{city}}, {{zipcode}}</p>
-    </div>
-    {{else}}
-    <div class="address missing">
-      <p>No address specified</p>
-      <p>Please update the record</p>
-    </div>
-    {{/if}}
-  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
 </head>
 <body>
-<div id="users">
-</div>
-<script type="text/javascript" src="bower_components/zepto/zepto.min.js"></script>
-<script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
-<script type="text/javascript" src="templates.js"></script>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <p id="titleCaptionText"></p>
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+        
+    </div>
+
+    <section class="photo-album-container"></section>
+    
+    <!-- templates -->
+    <script id="photo-album-template" type="text/x-handlebars-template">
+        <div class="photo-album-container">
+            <h1>Photo Album</h1>
+            {{#randomPhoto this}}
+            {{/randomPhoto}}
+        </div>
+	</script>
+
+    
+    <script src='js/jquery-3.3.1.js'></script>
+    <script src='js/handlebars-v4.0.12.js'></script>
+    <script src='js/scripts.js'></script>
+    <script src='js/modal.js'></script>
+        
 </body>
+
 </html>
